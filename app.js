@@ -20,11 +20,11 @@ const hour = 3600000;
 
 const app=express();
 
-const uri=`mongodb+srv://admin-pavan:${process.env.DBPASSWORD}@cluster0.zmugtyo.mongodb.net/OurApp`;
+const uri=process.env.MONGODB_URI;
 
 async function connectdb(){
   try{
-    await mongoose.connect(`mongodb+srv://admin-pavan:${process.env.DBPASSWORD}@cluster0.zmugtyo.mongodb.net/OurApp`);
+    await mongoose.connect(uri);
   }
   catch(err) {console.log(err);}
 }
